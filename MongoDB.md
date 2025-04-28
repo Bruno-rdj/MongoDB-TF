@@ -1,6 +1,6 @@
-## **Exercício 1: Inserindo Dados**
+# **Exercício 1: Inserindo Dados**
 
-### 1. **Clientes**
+### 1.1 **Clientes**
    Para inserir dados na coleção de clientes, use o seguinte comando:
    ```javascript
    db.client.insertMany([
@@ -35,7 +35,7 @@
    ]);
    ```
 
-### 2. **Processos**
+### 1.2 **Processos**
    Para registrar os processos relacionados aos clientes na coleção `client_processes`, utilize:
    ```javascript
    db.client_processes.insertMany([
@@ -60,7 +60,7 @@
    ]);
    ```
 
-### 3. **Eventos**
+### 1.3 **Eventos**
    Para inserir eventos relacionados aos clientes, utilize:
    ```javascript
    db.events.insertMany([
@@ -105,27 +105,27 @@
 
 ---
 
-## **Exercício 2: Consultando Dados**
+# **Exercício 2: Consultando Dados**
 
-### 1. **Clientes em São Paulo**  
+### 2.1 **Clientes em São Paulo**  
    Para listar todos os clientes que estão na cidade de São Paulo, utilize:
    ```javascript
    db.client.find({city: {$eq: "São Paulo"}});
    ```
 
-### 2. **Processos com Valor Superior a 2000**  
+### 2.2 **Processos com Valor Superior a 2000**  
    Para listar os processos cujo valor é superior a 2000, utilize:
    ```javascript
    db.client_processes.find({value: {$gt: 2000.0}});
    ```
 
-### 3. **Eventos com Proposta Pendente ou Aceita**  
+### 2.3 **Eventos com Proposta Pendente ou Aceita**  
    Para encontrar os eventos com status de proposta "pending accepted" ou "accepted", utilize:
    ```javascript
    db.events.find({proposal_status: {$in: ["pending accepted", "accepted"]}});
    ```
 
-### 4. **Clientes Corporativos**  
+### 2.4 **Clientes Corporativos**  
    Para listar clientes corporativos (onde o campo `enterprise` não é nulo) e exibir apenas o nome e o CNPJ, use:
    ```javascript
    db.client.find(
@@ -134,7 +134,7 @@
    );
    ```
 
-### 5. **Processos de Cobrança**  
+### 2.5 **Processos de Cobrança**  
    Para listar processos da classe "Cobrança" e ordená-los por valor de forma decrescente, utilize:
    ```javascript
    db.client_processes.find({class: "Cobrança"}).sort({value: -1});
@@ -142,9 +142,9 @@
 
 ---
 
-## **Exercício 3: Atualizando Dados**
+# **Exercício 3: Atualizando Dados**
 
-### 1. **Atualizar Status do Processo**  
+### 3.1 **Atualizar Status do Processo**  
    Para alterar o status do processo com o número "PROC-2023-001" para "concluído", use:
    ```javascript
    db.client_processes.updateOne(
@@ -153,7 +153,7 @@
    );
    ```
 
-### 2. **Adicionar Observação ao Evento**  
+### 3.2 **Adicionar Observação ao Evento**  
    Para adicionar a observação "OBS-MS-001.txt" ao evento de Maria Silva, utilize:
    ```javascript
    db.events.updateOne(
@@ -162,7 +162,7 @@
    );
    ```
 
-### 3. **Incrementar Quantidade de Limpezas**  
+### 3.3 **Incrementar Quantidade de Limpezas**  
    Para aumentar em 1 o número de limpezas para a Empresa Soluções Ltda, use:
    ```javascript
    db.events.updateOne(
@@ -173,15 +173,15 @@
 
 ---
 
-## **Exercício 4: Excluindo Dados**
+# **Exercício 4: Excluindo Dados**
 
-### 1. **Remover Processo**  
+### 4.1 **Remover Processo**  
    Para excluir o processo com número "PROC-2023-002", use:
    ```javascript
    db.client_processes.deleteOne({number: "PROC-2023-002"});
    ```
 
-### 2. **Visualizar Índices**  
+### 4.2 **Visualizar Índices**  
    Para listar todos os índices da coleção `client`, utilize:
    ```javascript
    db.client.getIndexes();
@@ -189,7 +189,7 @@
 
 ## Exercício 5: Criando Índices
 
-### 1. Índice no Nome do Cliente: Criando um índice no campo full_name da coleção client.
+### 5.1 Índice no Nome do Cliente: Criando um índice no campo full_name da coleção client.
   ```javascript
 full_name_1
 [
@@ -198,7 +198,7 @@ full_name_1
 ]
    ```
 
-### 2. Visualizar Índices: Listando todos os índices da coleção client.
+### 5.2 Visualizar Índices: Listando todos os índices da coleção client.
   ```javascript
 [
   { v: 2, key: { _id: 1 }, name: '_id_' },
