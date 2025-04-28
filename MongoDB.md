@@ -1,5 +1,7 @@
 ## **Exercício 1: Inserindo Dados**
 
+## **Exercício 1: Inserindo Dados**
+
 ### 1. **Clientes**
    Para inserir dados na coleção de clientes, use o seguinte comando:
    ```javascript
@@ -105,3 +107,39 @@
 
 ---
 
+## **Exercício 2: Consultando Dados**
+
+### 1. **Clientes em São Paulo**  
+   Para listar todos os clientes que estão na cidade de São Paulo, utilize:
+   ```javascript
+   db.client.find({city: {$eq: "São Paulo"}});
+   ```
+
+### 2. **Processos com Valor Superior a 2000**  
+   Para listar os processos cujo valor é superior a 2000, utilize:
+   ```javascript
+   db.client_processes.find({value: {$gt: 2000.0}});
+   ```
+
+### 3. **Eventos com Proposta Pendente ou Aceita**  
+   Para encontrar os eventos com status de proposta "pending accepted" ou "accepted", utilize:
+   ```javascript
+   db.events.find({proposal_status: {$in: ["pending accepted", "accepted"]}});
+   ```
+
+### 4. **Clientes Corporativos**  
+   Para listar clientes corporativos (onde o campo `enterprise` não é nulo) e exibir apenas o nome e o CNPJ, use:
+   ```javascript
+   db.client.find(
+     {enterprise: { $ne: null }},
+     {full_name: 1, cnpj_enterprise: 1, _id: 0}
+   );
+   ```
+
+### 5. **Processos de Cobrança**  
+   Para listar processos da classe "Cobrança" e ordená-los por valor de forma decrescente, utilize:
+   ```javascript
+   db.client_processes.find({class: "Cobrança"}).sort({value: -1});
+   ```
+
+---
