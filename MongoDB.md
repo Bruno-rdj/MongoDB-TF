@@ -186,3 +186,22 @@
    ```javascript
    db.client.getIndexes();
    ```
+
+## Exercício 5: Criando Índices
+
+### 1. Índice no Nome do Cliente: Criando um índice no campo full_name da coleção client.
+  ```javascript
+full_name_1
+[
+  { v: 2, key: { _id: 1 }, name: '_id_' },
+  { v: 2, key: { full_name: 1 }, name: 'full_name_1' }
+]
+   ```
+
+### 2. Visualizar Índices: Listando todos os índices da coleção client.
+  ```javascript
+[
+  { v: 2, key: { _id: 1 }, name: '_id_' },
+  { v: 2, key: { full_name: 1 }, name: 'full_name_1' }
+]
+  ```
