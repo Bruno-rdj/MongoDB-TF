@@ -1,3 +1,5 @@
+## **Exercício 1: Inserindo Dados**
+
 ### 1. **Clientes**
    Para inserir dados na coleção de clientes, use o seguinte comando:
    ```javascript
@@ -170,3 +172,17 @@
    ```
 
 ---
+
+## **Exercício 4: Excluindo Dados**
+
+### 1. **Remover Processo**  
+   Para excluir o processo com número "PROC-2023-002", use:
+   ```javascript
+   db.client_processes.deleteOne({number: "PROC-2023-002"});
+   ```
+
+### 2. **Visualizar Índices**  
+   Para listar todos os índices da coleção `client`, utilize:
+   ```javascript
+   db.client.getIndexes();
+   ```
