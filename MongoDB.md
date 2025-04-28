@@ -1,7 +1,3 @@
-## **Exercício 1: Inserindo Dados**
-
-## **Exercício 1: Inserindo Dados**
-
 ### 1. **Clientes**
    Para inserir dados na coleção de clientes, use o seguinte comando:
    ```javascript
@@ -140,6 +136,37 @@
    Para listar processos da classe "Cobrança" e ordená-los por valor de forma decrescente, utilize:
    ```javascript
    db.client_processes.find({class: "Cobrança"}).sort({value: -1});
+   ```
+
+---
+
+## **Exercício 3: Atualizando Dados**
+
+### 1. **Atualizar Status do Processo**  
+   Para alterar o status do processo com o número "PROC-2023-001" para "concluído", use:
+   ```javascript
+   db.client_processes.updateOne(
+     {number: "PROC-2023-001"}, 
+     {$set: {status: "concluído"}}
+   );
+   ```
+
+### 2. **Adicionar Observação ao Evento**  
+   Para adicionar a observação "OBS-MS-001.txt" ao evento de Maria Silva, utilize:
+   ```javascript
+   db.events.updateOne(
+     {client_id: "id_do_cliente_maria_silva"},
+     {$set: {note_doc: "OBS-MS-001.txt"}}
+   );
+   ```
+
+### 3. **Incrementar Quantidade de Limpezas**  
+   Para aumentar em 1 o número de limpezas para a Empresa Soluções Ltda, use:
+   ```javascript
+   db.events.updateOne(
+     {client_id: "id_do_cliente_empresa_solucoes"}, 
+     {$inc: {amount_of_cleaning: 1}}
+   );
    ```
 
 ---
