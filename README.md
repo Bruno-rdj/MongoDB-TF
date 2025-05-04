@@ -1,4 +1,4 @@
-## ** Matéria: Banco de Dados - Professor Gustavo**
+##  Matéria: Banco de Dados - Professor Gustavo
 
 ### TF 1 - 23/04/2025
 
